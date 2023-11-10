@@ -1,6 +1,6 @@
-import { createPool } from 'mysql2/promise'
+import { createPool,Pool } from 'mysql2/promise'
 
-export async function connect(){
+export async function connect(): Promise<Pool> {
 
   const connection = await createPool({
       host:'localhost',
@@ -9,5 +9,6 @@ export async function connect(){
       database:'typescript_MySQL',
       connectionLimit:10
   })
+  return connection;
 
 }
