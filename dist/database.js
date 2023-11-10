@@ -20,6 +20,7 @@ function connect() {
             database: 'typescript_MySQL',
             connectionLimit: 10
         });
+        return connection;
     });
 }
 exports.connect = connect;
